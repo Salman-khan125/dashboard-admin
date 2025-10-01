@@ -29,4 +29,25 @@ body,
   background: #555;
 }
 
+/* make the app layout use flex and push main content to the right of the fixed sidebar */
+.app {
+  display: flex;
+}
+
+/* default content offset to match the expanded sidebar width */
+.content {
+  margin-left: 240px;       /* match expandedWidth in Sidebar */
+  width: calc(100% - 240px);
+  transition: margin-left 0.2s ease;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* optional small-screen behaviour */
+@media (max-width: 900px) {
+  .content {
+    margin-left: 80px; /* matches collapsedWidth */
+    width: calc(100% - 80px);
+  }
+}
 
